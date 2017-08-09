@@ -34,7 +34,7 @@ public class PostTest {
     public void AllPostsAreCorrectlyReturned_true() {
         Post post = setupNewPost();
         Post post2 = setupNewPost2();
-        assertEquals(1, Post.getAll().size());
+        assertEquals(2, Post.getAll().size());
     }
 
 
