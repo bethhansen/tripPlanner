@@ -1,6 +1,7 @@
 package models;
 
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Post {
@@ -9,6 +10,7 @@ public class Post {
     private String item3;
     private String item4;
     private boolean published;
+    private LocalDateTime createdAt;
     private static ArrayList<Post> itemList = new ArrayList<>();
 
     public Post(String item1, String item2, String item3, String item4){
@@ -17,11 +19,16 @@ public class Post {
         this.item3 = item3;
         this.item4 = item4;
         this.published = false;
+        this.createdAt = LocalDateTime.now();
         itemList.add(this);
     }
 
     public static ArrayList<Post> getAll() {
         return itemList;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
     // test-clear-all-method//
