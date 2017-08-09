@@ -8,6 +8,7 @@ public class Post {
     private String item2;
     private String item3;
     private String item4;
+    private boolean published;
     private static ArrayList<Post> itemList = new ArrayList<>();
 
     public Post(String item1, String item2, String item3, String item4){
@@ -15,6 +16,7 @@ public class Post {
         this.item2 = item2;
         this.item3 = item3;
         this.item4 = item4;
+        this.published = false;
         itemList.add(this);
     }
 
@@ -30,6 +32,9 @@ public class Post {
     //                     //
 
 
+    public boolean getPublished(){
+        return this.published;
+    }
 
 
     /// getter methods ///
