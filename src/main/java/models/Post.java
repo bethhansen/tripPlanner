@@ -18,6 +18,16 @@ public class Post {
         itemList.add(this);
     }
 
+    public static ArrayList<Post> getAll() {
+        return itemList;
+    }
+
+    // test-clear-all-method//
+
+    public static void clearAllPosts(){
+        itemList.clear();
+    }
+    //                     //
 
 
 
