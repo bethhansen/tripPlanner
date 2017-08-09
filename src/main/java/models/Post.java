@@ -9,6 +9,7 @@ public class Post {
     private String item2;
     private String item3;
     private String item4;
+    private int id;
     private boolean published;
     private LocalDateTime createdAt;
     private static ArrayList<Post> itemList = new ArrayList<>();
@@ -21,6 +22,7 @@ public class Post {
         this.published = false;
         this.createdAt = LocalDateTime.now();
         itemList.add(this);
+        this.id = itemList.size();
     }
 
     public static ArrayList<Post> getAll() {
@@ -43,6 +45,9 @@ public class Post {
         return this.published;
     }
 
+    public int getId() {
+        return id;
+    }
 
     /// getter methods ///
     //////////////////////

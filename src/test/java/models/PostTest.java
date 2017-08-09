@@ -19,9 +19,10 @@ public class PostTest {
         Post.clearAllPosts();
     }
 
-    public Post setupNewPost(){
+    public Post setupNewPost() {
         return new Post("crowbar", "water", "rope", "cellphone");
     }
+
     public Post setupNewPost2() {
         return new Post("thug", "rope", "tire", "battery");
     }
@@ -46,12 +47,17 @@ public class PostTest {
     }
 
     @Test
-    public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception{
+    public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception {
         Post post = setupNewPost();
         assertEquals(LocalDateTime.now().getDayOfWeek(), post.getCreatedAt().getDayOfWeek());
     }
 
-
+    @Test
+    public void getId_postsInstantiateWithAnID_1() throws Exception {
+        Post.clearAllPosts();
+        Post post = setupNewPost();
+        assertEquals(1, post.getId());
 
 
     }
+}
