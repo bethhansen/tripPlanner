@@ -18,13 +18,25 @@ public class App {
             return new ModelAndView(model, "post-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/posts/:id/update", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            int idOfPostToEdit = Integer.parseInt(req.params("id"));
-            Post editPost = Post.findById(idOfPostToEdit);
-            model.put("editPost", editPost);
-            return new ModelAndView(model, "post-form.hbs");
-        }, new HandlebarsTemplateEngine());
+
+// unfunctional, because we need to edit the entire array. //
+// https://www.learnhowtoprogram.com/java-august-2017/web-applications-with-java/epicodus-blog-update-and-delete-routes
+// ^ this is where we left off
+//        get("/posts/:id/update", (req, res) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            String item1 = req.queryParams("item1");
+//            String item2 = req.queryParams("item2");
+//            String item3 = req.queryParams("item3");
+//            String item4 = req.queryParams("item4");
+//            int idOfPostToEdit = Integer.parseInt(req.params("id"));
+//            Post editPost = Post.findById(idOfPostToEdit);
+//            editPost.update( "item1","");
+//            editPost.update( String"item2");
+//            editPost.update( String"item3");
+//            editPost.update( String"item4");
+////            model.put("editPost", editPost); // take this one out ?
+//            return new ModelAndView(model, "success.hbs");
+//        }, new HandlebarsTemplateEngine());
 
 
         get("/posts/:id", (req, res) -> {
