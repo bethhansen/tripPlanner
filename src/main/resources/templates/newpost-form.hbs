@@ -1,5 +1,14 @@
 {{#partial "content"}}
 
+    {{#if editPost}}
+        <h1>Edit this List!</h1>
+        <form action="/posts/{{editPost.id}}/update" method="post">
+            <label for="content">Edit this list's content</label>
+            <input id="content" name="content" type="text" value="{{editPost.content}}">
+        </form>
+    {{else}}
+
+
     <h1>Add a new List!</h1>
 
     <form action="/item/new" method="post">
@@ -20,6 +29,7 @@
             <input id="item4" name="item4" type="text">
         </div>
         <div>
+    {{/if}}
             <button type="submit" class="btn btn-success">Add a List</button>
         </div>
     </form>

@@ -78,9 +78,6 @@ public class PostTest {
     @Test
     public void updateChangesPostContent() throws Exception {
         Post post = setupNewPost();
-//        ArrayList<Post> formerContent = post.getContent();
-//        LocalDateTime formerDate = post.getCreatedAt();
-//        int formerId = post.getId();
         post.update("Android", "cat", "mouse", "tire");
         assertEquals("cat" , post.getItem2());
 
