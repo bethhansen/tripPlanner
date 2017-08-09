@@ -3,8 +3,23 @@
     {{#if editPost}}
         <h1>Edit this List!</h1>
         <form action="/posts/{{editPost.id}}/update" method="post">
-            <label for="content">Edit this list's content</label>
-            <input id="content" name="content" type="text" value="{{editPost.content}}">
+            Edit your List!
+            <div class=form-group">
+                <label for="item1">First Item:</label>
+                <input id="item1" name="item1" type="text" value="{{editPost.raccoon}}" >
+            </div>
+            <div class="form-group">
+                <label for="item2">Second Item:</label>
+                <input id="item2" name="item2" type="text" value="{{editPost.raccoon}}" >
+            </div>
+            <div class=form-group">
+                <label for="item3">Third Item:</label>
+                <input id="item3" name="item3" type="text" value="{{editPost.raccoon}}" >
+            </div>
+            <div class=form-group">
+                <label for="item4">Fourth Item:</label>
+                <input id="item4" name="item4" type="text" value="{{editPost.raccoon}}" >
+            </div>
         </form>
     {{else}}
 
