@@ -25,6 +25,16 @@ public class Post {
         this.id = itemList.size();
     }
 
+    public ArrayList<Post> getContent(){
+        return itemList;
+    }
+    public void update(String item1, String item2, String item3, String item4){
+        this.item1 = item1;
+        this.item2 = item2;
+        this.item3 = item3;
+        this.item4 = item4;
+    }
+
     public static Post findById(int id){
         return itemList.get(id-1);
     }

@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -74,7 +75,14 @@ public class PostTest {
         assertEquals(2, Post.findById(post2.getId()).getId());
     }
 
-
-
+    @Test
+    public void updateChangesPostContent() throws Exception {
+        Post post = setupNewPost();
+//        ArrayList<Post> formerContent = post.getContent();
+//        LocalDateTime formerDate = post.getCreatedAt();
+//        int formerId = post.getId();
+        post.update("Android", "cat", "mouse", "tire");
+        assertEquals("cat" , post.getItem2());
 
     }
+}
