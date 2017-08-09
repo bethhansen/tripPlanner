@@ -25,6 +25,10 @@ public class Post {
         this.id = itemList.size();
     }
 
+    public static Post findById(int id){
+        return itemList.get(id-1);
+    }
+
     public static ArrayList<Post> getAll() {
         return itemList;
     }

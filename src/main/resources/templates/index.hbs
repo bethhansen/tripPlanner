@@ -1,3 +1,4 @@
+
 {{#partial "content"}}
 
     <h1>Your List of Items!</h1>
@@ -6,13 +7,13 @@
     {{#if itemList}}
 
         {{#each itemList}}
-
             <ul>
 
                 <li>Item 1: {{ item1 }} </li>
                 <li>Item 2: {{ item2 }} </li>
                 <li>Item 3: {{ item3 }} </li>
                 <li>Item 4: {{ item4 }} </li>
+                <p>{{ content }} <a href="/posts/{{id}}">read more...</a></p>
             </ul>
         {{/each}}
     {{else}}
@@ -20,29 +21,7 @@
     {{/if}}
 
 
-    <p>Create a new list of items for your trip!! :</p>
 
-    <form action="/item/new" method="post">
-        <div class=form-group">
-        <label for="item1">First Item:</label>
-        <input id="item1" name="item1" type="text">
-        </div>
-        <div class="form-group">
-        <label for="item2">Second Item:</label>
-        <input id="item2" name="item2" type="text">
-        </div>
-        <div class=form-group">
-        <label for="item3">Third Item:</label>
-        <input id="item3" name="item3" type="text">
-        </div>
-        <div class=form-group">
-        <label for="item4">Fourth Item:</label>
-        <input id="item4" name="item4" type="text">
-        </div>
-        <div>
-            <button type="submit" class="btn btn-success">Add a List</button>
-        </div>
-    </form>
 {{/partial}}
 
 {{> layout.hbs}}

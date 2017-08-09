@@ -27,6 +27,8 @@ public class PostTest {
         return new Post("thug", "rope", "tire", "battery");
     }
 
+    //// tests begin below here ////
+
     @Test
     public void PostObjectGetsCorrectlyCreated_true() throws Exception {
         Post post = setupNewPost();
@@ -57,7 +59,22 @@ public class PostTest {
         Post.clearAllPosts();
         Post post = setupNewPost();
         assertEquals(1, post.getId());
+    }
+
+    @Test
+    public void findReturnsCorrectPost() throws Exception {
+        Post post = setupNewPost();
+        assertEquals(1, Post.findById(post.getId()).getId());
+    }
+
+    @Test
+    public void findReturnsCorrectPostWhenMoreThanOnePostExists() throws Exception {
+        Post post = setupNewPost();
+        Post post2 = setupNewPost2();
+        assertEquals(2, Post.findById(post2.getId()).getId());
+    }
+
+
 
 
     }
-}

@@ -12,6 +12,35 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
+
+        get("/posts/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "newpost-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        get("/posts/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfPostToFind = Integer.parseInt(req.params("id"));
+            Post foundPost = Post.findById(idOfPostToFind);
+            model.put("post", foundPost);
+            return new ModelAndView(model, "post-detail.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        post("/item/new",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String item1 = request.queryParams("item1");
+            String item2 = request.queryParams("item2");
+            String item3 = request.queryParams("item3");
+            String item4 = request.queryParams("item4");
+            Post newpost = new Post(item1, item2, item3, item4);
+            model.put("raccoon", newpost);
+            return new ModelAndView(model, "success.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Post> allPosts = Post.getAll();
@@ -20,15 +49,6 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-         post("/item/new",(request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            String item1 = request.queryParams("item1");
-            String item2 = request.queryParams("item2");
-            String item3 = request.queryParams("item3");
-            String item4 = request.queryParams("item4");
-            Post newpost = new Post(item1, item2, item3, item4);
-            return new ModelAndView(model, "success.hbs");
-        },new HandlebarsTemplateEngine());
 
 
 
