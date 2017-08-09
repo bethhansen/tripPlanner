@@ -40,7 +40,7 @@ public class PostTest {
     @Test
     public void getPublished_isFalseAfterInstantiation_false() throws Exception {
         Post post = setupNewPost();
-        assertEquals(true, post.getPublished());
+        assertEquals(false, post.getPublished());
     }
 
 
